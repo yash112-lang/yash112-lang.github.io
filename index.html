@@ -11,21 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <meta name="description" content="Portfolio Website" />
     <meta property="og:type" content="Website" />
     <meta name="image" property="og:image" content="https://live.staticflickr.com/65535/51298341889_73e9268199_z.jpg" />
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light mb-1">
+<body onload="removeLoader();">
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+            <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round" />
+            <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round" />
+            <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round" />
+            <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round" />
+        </svg>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-light mb-1" id="resume-nav" style="display: none;">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href=" https://drive.google.com/file/d/1nRN20tFvnczRTZB2yGc8vNfXwKNrPqd5/view?usp=sharing">Resume</a>
             </li>
         </ul>
     </nav>
-
-    <div class="container">
+<script>
+    function removeLoader() {
+        setTimeout(function () {
+            $("#container").fadeIn(2000);
+            $("#resume-nav").fadeIn(2000);
+            $("#loader-wrapper").fadeOut(1000);
+           }, 2000);
+        
+    }
+</script>
+    <div class="container" id="container" style="display: none;">
         <section class="landing">
             <div class="row vertical-center">
                 <div class="col-lg-8 text-left pb-5">
@@ -34,9 +55,9 @@
                         I am a <span class="typed-text" style="font-weight: 500;"></span><span class="cursor">&nbsp;</span>
                     </p>
                 </div>
-                <div class="col-lg-4 text-center my-auto pb-5 rounded-circle"><img class="img-fluid rounded-circle"
+                <!-- <div class="col-lg-4 text-center my-auto pb-5 rounded-circle"><img class="img-fluid rounded-circle"
                         src="./icons/logo.jpg"></div>
-            </div>
+            </div> -->
         </section>
 
         <section class="mt-4 mb-4">
